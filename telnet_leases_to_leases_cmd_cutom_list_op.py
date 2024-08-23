@@ -5,18 +5,16 @@ import csv
 
 
 def telnet_leases_to_csv():
-    with open('input/telnet-static-leases.txt', 'r') as in_file:
-        # stripped = (line.strip() for line in in_file)
-        lines = (line.split() for line in in_file if line)
-        # print(lines)
-        with open('input/host-details-table.csv', 'w') as out_file:
-            writer = csv.writer(out_file)
-            writer.writerow(('mac', 'host_name', 'ip', 'time'))
-            for row in lines:
-                # print(row)
-                terms = (term.split('=') for term in row if term)
+    """Read the telnet static leases file and create a CSV file of host info."""
+    with open('input/telnet-static-leases.txt') as input_file:
+        with open('input/host-details-table.csv', 'w') as output_file:
+            writer = csv.writer(output_file)
+            writer.writerow(['mac', 'host_name', 'ip', 'time'])
+            for line in input_file:
+                if not line.strip():
+                    continue
+                terms = [term.split('=') for term in line.split()]
                 for term in terms:
-                    print(term)
                     writer.writerow(term)
 
 def create_static_leases_str():
