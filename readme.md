@@ -1,9 +1,9 @@
 
 get leases data from router
 
-telnet 192.168.1.1
+telnet 192.168.0.1
 or
-ssh root@192.168.1.1
+ssh root@192.168.0.1
 
 password
 
