@@ -23,7 +23,7 @@ def create_static_leases_str():
         file = in_file
         # lines = (line.split() for line in file if line)
         linesStore = list(line.split() for line in file if line)
-        linesStore.sort(key=getLastOctet)
+        linesStore.sort(key=get_last_octet)
         # print(lines)
         with open("output/static-leases-op-string.txt", "w") as out_file:
             # writer = csv.writer(out_file)
@@ -88,7 +88,7 @@ def create_custom_list():
     with open("host-details-table.csv", "r") as in_file:
         file = in_file
         linesStore = list(line.split() for line in file if line)
-        linesStore.sort(key=getLastOctet)
+        linesStore.sort(key=get_last_octet)
         # print(lines)
 
         with open("output/custom.list", "w") as out_file:
@@ -152,7 +152,7 @@ def create_custom_list():
 
 
 
-def getLastOctet(e):
+def get_last_octet(e):
     """
     Returns the last octet of the IP address in the given tuple `e`. If the last character of the last octet is a comma, it is removed.
 
