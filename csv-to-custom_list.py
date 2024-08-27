@@ -17,13 +17,13 @@ def myFunc(e):
     return intorder
 
 
-with open("host-details-table.csv", "r") as in_file:
+with open("host-details-table.csv", "r", encoding="utf-8") as in_file:
     file = in_file
     linesStore = list(line.split() for line in file if line)
     linesStore.sort(key=myFunc)
     # print(lines)
 
-    with open("output/custom.list", "w") as out_file:
+    with open("output/custom.list", "w", encoding="utf-8") as out_file:
         # writer = csv.writer(out_file)
         # writer.writerow(('mac', 'host_name', 'ip', 'time'))
         # lines.next()
