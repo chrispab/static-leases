@@ -7,6 +7,14 @@ ssh root@192.168.0.1
 
 password
 
+Then "nvram get static_leases" to check if OK and then check in GUI if OK, it was.
+
+Then "nvram commit" and "reboot"
+
+
+
+--------------------------------------------------
+
 root@DD-WRT:~# nvram show | grep static
 
 paste op into telnet-static-leases.txt
