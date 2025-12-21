@@ -28,6 +28,8 @@ output/static-leases-op-string.txt command to use
 and file for pihole
 output/custom.list
 
+Ran "nvram set static_leasenum=xx"  line by itself first 
+then copy/paste  all of "nvram set static_leases=" command until the last double quote. Do not include last CRLF at end.
 ======================================
 
 run static-leases-to-csv.py
