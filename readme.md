@@ -17,10 +17,18 @@ Then "nvram commit" and "reboot"
 
 root@DD-WRT:~# nvram show | grep static
 
-paste op into telnet-static-leases.txt
+paste op into input/telnet-static-leases.txt
 remove all text up to first mac address
 remove all after final '='
 save
+
+run python3 telnet_leases_to_leases_cmd_cutom_list_op.py
+generates 
+output/static-leases-op-string.txt command to use
+and file for pihole
+output/custom.list
+
+======================================
 
 run static-leases-to-csv.py
 
