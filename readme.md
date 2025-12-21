@@ -13,9 +13,12 @@ Then "nvram commit" and "reboot"
 
 
 
---------------------------------------------------
+=============================================
 
 root@DD-WRT:~# nvram show | grep static
+or
+nvram get static_leases
+
 
 paste op into input/telnet-static-leases.txt
 remove all text up to first mac address
@@ -30,6 +33,8 @@ output/custom.list
 
 Ran "nvram set static_leasenum=xx"  line by itself first 
 then copy/paste  all of "nvram set static_leases=" command until the last double quote. Do not include last CRLF at end.
+
+Then "nvram commit" and "reboot"
 ======================================
 
 run static-leases-to-csv.py
